@@ -64,19 +64,21 @@
   </head>
 
   <body>
-    <div class="wrapper">
-      <video src="./how-many-ds.webm" loop></video>
+    <div onclick="void(0);">
+      <div class="wrapper">
+        <video src="./how-many-ds.webm" loop></video>
 
-      <div class="play">▶</div>
+        <div class="play">▶</div>
+      </div>
+      <script>
+        const video = document.querySelector('video');
+        const playButton = document.querySelector('.play');
+        const wrapper = document.querySelector('.wrapper');
+        playButton.addEventListener('click', () => {
+          video.play();
+          wrapper.removeChild(playButton);
+        });
+      </script>
     </div>
-    <script>
-      const video = document.querySelector('video');
-      const playButton = document.querySelector('.play');
-      const wrapper = document.querySelector('.wrapper');
-      playButton.addEventListener('click', () => {
-        video.play();
-        wrapper.removeChild(playButton);
-      });
-    </script>
   </body>
 </html>
